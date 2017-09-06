@@ -1,0 +1,49 @@
+#include <iostream>
+#include <cstdlib>
+
+using namespace std;
+
+struct Edge {
+    int src, dest;
+};
+
+struct Graph {
+    int V, E;
+    struct Edge *edge;
+};
+
+struct Graph* createGraph(int V, int E) {
+    struct Graph *g = (struct Graph*) malloc (sizeof(struct Graph));
+    graph->V = V;
+    graph->E = E;
+    graph->edge = (struct Edge*) malloc(sizeof(Edge));
+    return graph;
+}
+
+// find the subset of an element
+int find(int x, int parent[]) {
+    if(parent[x] == -1)
+        return x;
+    return find(parent[x], parent);    
+}
+
+// perform union of two subsets
+void union(int x, int y, int parent[]) {
+    int sX = find(x, parent);
+    int sY = find(y, parent);
+    
+    parent[sX] = sY;
+}
+
+int isCycle(Graph *g) {
+    int *parent = (int*) malloc (graph->V * sizeof(int));
+    memset(parent, -1, sizeof(int) * grap->V);
+     
+    for(int i = 0; i < g->E; i++) {
+        
+    }
+}
+
+int main() {
+
+}
